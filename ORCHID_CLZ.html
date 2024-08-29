@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration</title>
+  </head>
+  <body>
+    <h2>User Registration Form</h2>
+    <form onsubmit="return validateForm()" name="registrationForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" /><br /><br />
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" /><br /><br />
+
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option value="">Select a country</option>
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="UK">UK</option>
+        <option value="Australia">Australia</option>
+        <option value="Nepal">Nepal</option></select
+      ><br /><br />
+
+      <input type="submit" value="Register" />
+    </form>
+
+    <script>
+      function validateForm() {
+        let username = document.forms["registrationForm"]["username"].value;
+        let email = document.forms["registrationForm"]["email"].value;
+        let country = document.forms["registrationForm"]["country"].value;
+
+        // Validate username: between 5 and 15 characters
+        let nameRegex = /^[A-Za-z]{5,15}$/;
+        if (!nameRegex.test(username)) {
+          alert("Username must be between 5 and 15 alphabetic characters.");
+          return false;
+        }
+
+        // Validate email using regex
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+
+        // Validate country selection
+        if (country === "") {
+          alert("Please select a country.");
+          return false;
+        }
+
+        // If all validations pass, return true to submit the form
+        return true;
+      }
+    </script>
+  </body>
+</html>
