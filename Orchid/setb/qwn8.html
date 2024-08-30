@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Chaining Example</title>
+    <style>
+      #box {
+        width: 200px;
+        height: 200px;
+        background-color: #4caf50;
+        display: none; /* Initially hidden */
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <button id="start">Start Animation</button>
+    <div id="box"></div>
+
+    <script>
+      $(document).ready(function () {
+        $("#start").click(function () {
+          $("#box")
+            .fadeIn(1000) // Fade in over 1 second
+            .delay(2000) // Wait for 2 seconds
+            .fadeOut(1000); // Fade out over 1 second
+        });
+      });
+    </script>
+  </body>
+</html>

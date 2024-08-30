@@ -26,8 +26,14 @@
 
       <input type="submit" value="Register" />
     </form>
-
+    <p></p>
+    <p></p>
     <script>
+      let para = document.getElementsByTagName("p")[0];
+      let para1 = document.getElementsByTagName("p")[1];
+      para.innerHTML = "adfasdfasdfasd";
+      para1.innerHTML = "HEllo BRO";
+
       function validateForm() {
         let username = document.forms["registrationForm"]["username"].value;
         let email = document.forms["registrationForm"]["email"].value;

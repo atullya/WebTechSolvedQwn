@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="inputbox" onkeyup="displayMsg()" />
+    <p id="showmsg"></p>
+    <script>
+      function displayMsg() {
+        let inputbox = document.getElementById("inputbox");
+        let showmsg = document.getElementById("showmsg");
+        showmsg.innerHTML = "Hello JavaScript";
+      }
+    </script>
+  </body>
+</html>
